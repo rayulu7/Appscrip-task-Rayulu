@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Header from "./components/Header";
 import Filters from "./components/Filters";
 import ProductGrid from "./components/ProductGrid";
@@ -5,6 +6,12 @@ import Footer from "./components/Footer";
 import "./App.css";
 
 export default function App() {
+  const [filters, setFilters] = useState({
+    men: false,
+    women: false,
+    kids: false,
+  });
+
   return (
     <>
       <Header />
@@ -14,13 +21,13 @@ export default function App() {
           <h1>DISCOVER OUR PRODUCTS</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur. Amet est posuere rhoncus
-            scelerisque. Dolor integer scelerisque nibh amet mi ut elementum dolor.
+            scelerisque.
           </p>
         </section>
 
         <section className="plp">
-          <Filters />
-          <ProductGrid />
+          <Filters filters={filters} setFilters={setFilters} />
+          <ProductGrid filters={filters} />
         </section>
       </main>
 
