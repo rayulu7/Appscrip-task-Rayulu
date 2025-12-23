@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header";
+import Filters from "./components/Filters";
+import ProductGrid from "./components/ProductGrid";
+import Footer from "./components/Footer";
+import "./App.css";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+
+      <main className="container">
+        <section className="hero">
+          <h1>DISCOVER OUR PRODUCTS</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur. Amet est posuere rhoncus
+            scelerisque. Dolor integer scelerisque nibh amet mi ut elementum dolor.
+          </p>
+        </section>
+
+        <section className="plp">
+          <Filters />
+          <ProductGrid />
+        </section>
+      </main>
+
+      <Footer />
+    </>
   );
 }
-
-export default App;
